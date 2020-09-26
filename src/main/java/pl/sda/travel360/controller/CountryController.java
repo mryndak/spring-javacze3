@@ -27,4 +27,16 @@ public class CountryController {
         log.info("Create country for request: {}", countryDto);
         service.addCountry(countryDto.getName());
     }
+
+    @PutMapping
+    public CountryDto updateCountry(@RequestBody CountryDto countryDto) {
+        log.info("Update country for request: {}", countryDto);
+        return service.updateCountry(countryDto.getId(), countryDto.getName());
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCountry(@PathVariable("id") Long id) {
+        log.info("Delete country for id: {}", id);
+        service.deleteCountry(id);
+    }
 }

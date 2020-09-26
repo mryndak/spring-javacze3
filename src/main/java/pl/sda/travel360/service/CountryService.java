@@ -8,6 +8,7 @@ import pl.sda.travel360.dto.CountryDto;
 import pl.sda.travel360.repository.CountryRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -31,4 +32,16 @@ public class CountryService {
         repository.save(country);
     }
 
+    public CountryDto updateCountry(Long id, String name) {
+        Country country = repository.findById(id)
+                .map(c -> {
+                    c.setName(name);
+                    return repository.save(c);
+                }).orElseThrow();
+        return new CountryDto(country.getId(), country.getName());
+    }
+
+    public void deleteCountry(Long id) {
+        repository.deleteById(id);
+    }
 }
