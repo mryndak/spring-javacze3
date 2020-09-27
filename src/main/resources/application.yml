@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Travel360
+  datasource:
+    url: jdbc:mysql://localhost:32773/travel360?serverTimezone=Europe/Warsaw&useSSL=False
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+###########################
+# Application settings
+###########################
+app:
+  weather-client:
+    api-url: http://api.weatherapi.com
+    temperature-path: /v1/current.json
+    api-key: d8ff71348e7c42d6918182014200708
