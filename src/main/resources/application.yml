@@ -2,7 +2,7 @@ spring:
   application:
     name: Travel360
   datasource:
-    url: jdbc:mysql://localhost:32773/travel360?serverTimezone=Europe/Warsaw&useSSL=False
+    url: jdbc:mysql://localhost:32769/travel360?serverTimezone=Europe/Warsaw&useSSL=False&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
