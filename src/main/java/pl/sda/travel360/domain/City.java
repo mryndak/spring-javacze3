@@ -1,20 +1,18 @@
 package pl.sda.travel360.domain;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "country")
-@Data
+@Table
 @NoArgsConstructor
 @AllArgsConstructor
-public class Country {
+public class City {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
 
     @Column
